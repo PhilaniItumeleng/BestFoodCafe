@@ -3,19 +3,21 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BestFoodCafe.Models
 {
-    public class Cart
+    public class Review
     {
         
         public int Id { get; set; }
-        public int UserId { get; set; }        
+        [ForeignKey("User")]
+        public int UserId { get; set; }
+        [ForeignKey("Cafe")]
         public int CafeId { get; set; }
-        public decimal Subtotal { get; set; }
-        public decimal Total { get; set; }
-        public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
+        public int Rating { get; set; }
+        public string Comment { get; set; }
 
-        //Foreign Keys 
+        public DateTime CreatedAt { get; set; }
+
         public User User { get; set; }
         public Cafe Cafe { get; set; }
+
     }
 }

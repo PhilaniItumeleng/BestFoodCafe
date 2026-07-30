@@ -5,13 +5,13 @@ namespace BestFoodCafe.Models
 {
     public class ItemOption
     {
-        [Key]
-        public string Id { get; set; }
-
-        [ForeignKey("OptionGroupId")]
-        public ItemOption OptionGroupId { get; set; }
+        public int Id { get; set; }        
+        public int OptionGroupId { get; set; }
         public string Name { get; set; }
         public decimal ExtraPrice { get; set; }
         public bool isAvailable { get; set; }
+
+
+        public ItemOptionGroup OptionGroup { get; set; }
     }
 }

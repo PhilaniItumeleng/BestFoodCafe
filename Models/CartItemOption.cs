@@ -5,15 +5,15 @@ namespace BestFoodCafe.Models
 {
     public class CartItemOption
     {
-        [Key]
-        public string Id { get; set; }
-
-        [ForeignKey("Id")]
-        public CartItem CartItemId { get; set; }
-
-        [ForeignKey("Id")]
-        public ItemOption ItemOptionId { get; set; }
-
+        
+        public int Id { get; set; }
         public decimal ExtraPrice { get; set; }
+        public int CartItemId { get; set; }
+        public int ItemOptionId { get; set; }
+
+
+        //Foreign Keys
+        public CartItem CartItem { get; set; }       
+        public ItemOption ItemOption { get; set; }
     }
 }

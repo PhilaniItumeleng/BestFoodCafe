@@ -3,21 +3,20 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BestFoodCafe.Models
 {
-    public class ItemOptionGroup
+    public class OrderItem
     {
         
         public int Id { get; set; }
-        
+         
+        public int OrderId { get; set; }
         public int MenuItemId { get; set; }
+        public string MenuItemName { get; set; }
+        public int Quantity { get; set; }
+        public decimal Price { get; set; }
 
-        public string Name { get; set; }
 
-        public bool isRequired { get; set; }
-        public int MinSelection { get; set; }
-        public int MaxSelection { get; set; }
-
-        //Foreign Key
+        //Foreign Keys
+        public Order Order { get; set; }
         public MenuItem MenuItem { get; set; }
-
     }
 }

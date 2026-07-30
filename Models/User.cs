@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using BestFoodCafe.Data.Enum;
+using System.ComponentModel.DataAnnotations;
 
 namespace BestFoodCafe.Models
 {
@@ -11,6 +12,8 @@ namespace BestFoodCafe.Models
         public string Password { get; set; }
         public int UniversityId { get; set; }
         //Enum for Roles
-
+        public Role Role { get; set; }
+        public DateTime CreatedAt { get; set; }
+        public DateTime UpdatedAt { get; set; }
     }
 }

@@ -6,12 +6,13 @@ namespace BestFoodCafe.Models
 {
     public class Category
     {
-        [Key]
-        public string CategoryId { get; set; }
-        [ForeignKey("CafeId")]
+        
+        public int CategoryId { get; set; }
+        [ForeignKey("Cafe")]
         public Cafe CafeId { get; set; }
 
         public string Name { get; set; }
         public int displayOrder { get; set; }
+        public DateTime CreatedAt { get; set; }
     }
 }
